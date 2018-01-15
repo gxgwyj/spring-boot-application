@@ -19,7 +19,7 @@ public class UserDaoImpl implements UserDao {
     JdbcTemplate jdbcTemplate;
 
     public void selectUserList(){
-        String sql = "select * from user";
+        String sql = "select * from cs_user";
         List<Map<String,Object>> userList = jdbcTemplate.queryForList(sql);
         ObjectMapper objectMapper = new ObjectMapper();
         try {
