@@ -1,6 +1,7 @@
 package com.xyz.app.service.impl;
 
-import com.xyz.app.dao.UserDao;
+import com.xyz.app.dao.CsUserMapper;
+import com.xyz.app.entity.CsUser;
 import com.xyz.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +13,11 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    UserDao userDao;
+    CsUserMapper csUserMapper;
 
     @Override
-    public void selectListUser() {
-        userDao.selectUserList();
+    public CsUser getUserById(Long userId) {
+        return csUserMapper.selectByPrimaryKey(userId);
     }
+
 }
