@@ -2,10 +2,10 @@ package com.xyz.app.dao;
 
 import com.xyz.app.entity.CsUser;
 
+import java.util.List;
+
 public interface CsUserMapper {
     int deleteByPrimaryKey(Long userId);
-
-    int insert(CsUser record);
 
     int insertSelective(CsUser record);
 
@@ -13,5 +13,5 @@ public interface CsUserMapper {
 
     int updateByPrimaryKeySelective(CsUser record);
 
-    int updateByPrimaryKey(CsUser record);
+    List<CsUser> selectByWhere(CsUser record);
 }
